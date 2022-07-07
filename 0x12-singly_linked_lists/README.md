@@ -1,1 +1,1 @@
-# Learning singly linked list
+C - Singly linked lists

@@ -1,4 +1,6 @@
-#ifndef SUM_DEF
-#define SUM_DEF
+#ifndef LIKEMACRO_H
+#define LIKEMACRO_H
+
 #define SUM(x, y) (x + y)
-#endif /*end SUM_DEF*/
+
+#endif

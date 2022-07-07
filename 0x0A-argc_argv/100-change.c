@@ -1,58 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * isInteger - checks if s is an integer
- * @s: string to check
- * Return: 0 or 1
- */
 
-int isInteger(const char *s)
+/**
+ * main - prints the function.
+ * @argc: counts the arguments of the function.
+ * @argv: gives the value of the arguments passed to the function.
+ *
+ * Return: Return always success.
+**/
+
+int main(int argc, char *argv[])
 {
-int i = 0;
-while (s[i] != '\0')
+int cents, coins = 0;
+
+if (argc == 2)
 {
-	if (s[i] < '0' || s[i] > '9')
-		return (0);
-	i++;
+cents = atoi(*(argv + 1));
+while (cents > 0)
+{
+if (cents % 25 < cents)
+{
+cents -= 25;
+coins++;
 }
+else if (cents % 10 < cents)
+{
+cents -= 10;
+coins++;
+}
+else if (cents % 5 < cents)
+{
+cents -= 5;
+coins++;
+}
+else if (cents % 2 < cents)
+{
+cents -= 2;
+coins++;			}
+else if (cents % 1 < cents)
+{
+cents -= 1;
+coins++;
+}
+}
+}
+else
+{
+printf("Error\n");
 return (1);
 }
-
-/**
- * main - adds positive numbers
- * @argc: int
- * @argv: list
- * Return: 0
- */
-
-int main(int argc, char const *argv[])
-{
-int i = 0, coinUsed = 0, coin = 0;
-int coins[] = {25, 10, 5, 2, 1};
-
-if (argc != 2)
-{
-	printf("Error\n");
-	return (1);
-}
-if (isInteger(argv[1]))
-{
-	i = atoi(argv[1]);
-	while (i > 0 && coin <= 4)
-	{
-		if (i >= coins[coin])
-		{
-			i -= coins[coin];
-			coinUsed++;
-		}
-		else
-		{
-			coin++;
-		}
-	}
-}
-
-printf("%i\n", coinUsed);
-
+printf("%d\n", coins);
 return (0);
 }
+
+
+

@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 /**
- * main - prints program name, followed by a new line
- * @argc: int
- * @argv: list
- * Return: 0
- */
+ * main - is a function that prints the name.
+ *@argc: is an argument counter for char.
+ *@argv: is an agument value for char.
+ *Return: Returns always success.
+**/
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-(void)argc;
-printf("%s\n", argv[0]);
+int i = argc - argc;
+
+printf("%s\n", argv[i]);
+
 return (0);
 }

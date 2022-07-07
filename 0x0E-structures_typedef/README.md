@@ -1,1 +1,1 @@
-# Learn Struct and Typedef
+0x0E. C - Structures, typedef

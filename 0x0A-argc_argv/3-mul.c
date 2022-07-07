@@ -1,21 +1,30 @@
-#include <stdio.h>
+#include<stdio.h>
 #include <stdlib.h>
-/**
- * main - print the result of the multiplication, followed by a new line
- * @argc: int
- * @argv: list
- * Return: 0
- */
 
-int main(int argc, char const *argv[])
+/**
+ * main - prints the function.
+ * @argc: counts agruments passed to the function for int.
+ * @argv: gives the value passed to the function for char.
+ *
+ * Return: Returns always success.
+**/
+
+int main(int argc, char *argv[])
 {
-(void)argc;
+int i, res = 1;
 
 if (argc != 3)
 {
-	printf("Error\n");
-	return (1);
+printf("%s\n", "Error");
+return (1);
 }
-printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
+else
+{
+for (i = 1; i < argc; i++)
+{
+res *= atoi(argv[i]);
+}
+printf("%d\n", res);
+}
 return (0);
 }
